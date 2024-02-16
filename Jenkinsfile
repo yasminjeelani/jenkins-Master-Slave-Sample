@@ -5,9 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    docker.build('nginx')
-                }
+                sh 'docker build -t mynginsapp .'
             }
         }        
         stage('Deploy') {
