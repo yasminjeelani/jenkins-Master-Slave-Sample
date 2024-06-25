@@ -15,8 +15,7 @@ pipeline {
                     checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/yasminjeelani/jenkins-Master-Slave-Sample.git']])
                     sh 'chmod +x script.sh'
                     sh './script.sh'
-                    sh '''docker build -t mynginnew .
-                        docker run --name mycont -p 80:80 mynginnew'''
+                    
                 }    
             }
         }
